@@ -120,5 +120,26 @@ pipeline {
                 }
             }
         }
+    
+stage('Docker Compose Up') {
+    steps {
+        script {
+            echo 'Starting EasyShop using Docker Compose...'
+
+            sh '''
+                cd /home/ubuntu/project/tws-e-commerce-app_hackathon
+
+                docker compose version
+
+                docker compose config --quiet
+
+                docker compose up -d --build
+
+                docker compose ps -a
+            '''
+        }
+    }
+}
+
     }
 }
