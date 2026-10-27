@@ -127,7 +127,6 @@ stage('Docker Compose Up') {
             echo 'Starting EasyShop using Docker Compose...'
 
             sh '''
-                cd /home/ubuntu/project/tws-e-commerce-app_hackathon
 
                 docker compose version
 
