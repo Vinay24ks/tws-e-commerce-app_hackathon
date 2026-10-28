@@ -124,15 +124,16 @@ pipeline {
 stage('Docker Compose Up') {
     steps {
         script {
-            echo 'Starting EasyShop using Docker Compose...'
+            echo 'Starting Easy Buy E-commerce App...'
 
             sh '''
+                set -e
 
                 docker compose version
 
                 docker compose config --quiet
 
-                docker compose up -d --build
+                docker compose up -d --no-build
 
                 docker compose ps -a
             '''
